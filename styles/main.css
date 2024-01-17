@@ -1,0 +1,122 @@
+/* CSS Resetter
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{text-decoration:none;}
+/*=== root ===*/
+:root{
+    /*=== Color ===*/
+    --c1:#1a4718;
+    --c2:white;
+    --c3:#e6e6e6;
+    --c4:#1d1d1d;
+    --c5:#eae69e;
+    --c6:#d7d7d7;
+}
+body.normaltheme{
+    --body-text-color:var(--c4);
+    --body-background:var(--c3);
+    --header-background:var(--c2);
+    --header-text-color:var(--c4);
+    --nav-background:var(--c2);
+    --nav-text-color:var(--c1);
+    --footer-background:var(--c4);
+    --footer-text-color:var(--c6);
+}
+/*=== headings, paragraphs ===*/
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:bold;}
+h1,h2,h3,h4,h5,h6,p{margin-bottom:1em;margin-top:0.5em;}
+h1{font-size:21pt}
+h2{font-size:19pt}
+h3{font-size:17pt}
+h4{font-size:15pt}
+h5,h6{font-size:13pt}
+/* === Body ===*/
+body{font-family:'pt sans',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size:12pt;background:var(--body-background);color:var(--body-text-color);scroll-behavior: smooth;/*line-height:1.2;*/}
+header{background:var(--header-background);color:var(--header-text-color);height:6rem;display:flex;align-items: center;justify-content: center;}
+nav#topnav{font-size:13pt;height:3.5rem;background:var(--nav-background);color:var(--nav-text-color);display:flex;align-items: center;justify-content: center;column-gap:2em;}
+#topnav a{color:var(--nav-text-color);height:100%;transition: 0.5s ease-in-out;padding:0.9em 1em;box-sizing: border-box;}
+#topnav a:hover{box-shadow: inset 0 -4px 0 0 var(--nav-text-color);}
+.jumpto{margin-top:-300px;padding-bottom:300px;display:block;position:absolute;z-index:-2}
+/* === FOOTER === */
+footer{background: var(--footer-background);
+    color: var(--footer-text-color);
+    height: 60vh;
+    display: flex;
+    font-size: 11pt;
+    padding: 6em 4em;
+    box-sizing: border-box;
+    column-gap: 7em;}
+footer a{color:var(--footer-text-color)}
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.footer-headings{font-weight:bold;margin:1em 0 0.5em;}
+.footer-company-name{font-size:13pt;font-weight:bold;margin-bottom:0.5em;}
+.footer-logo{display:contents;}
+footer .fa-solid {
+    font-size: 11pt;
+}
+.company-detail {
+    display: flex;
+    align-items: baseline;
+    column-gap: 0.5em;
+}
+.bottom-nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+.bottom-menu-hdg{color:grey;font-weight:bold;font-size:13pt;}
+.fa-brands{font-size:18pt;}
+.social-list {
+    display: flex;
+    column-gap: 0.8em;
+}
+
+@media(min-width:800px) {
+    .menu-button{display:none;}
+}
