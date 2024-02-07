@@ -11,32 +11,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/08c081035d.js" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
 </head>
 <body class='normaltheme'>
     <header>
-        <div class="menu-button">
-            <div class="menu-button-inner"></div>
-            <div class="menu-button-inner"></div>
-            <div class="menu-button-inner"></div>
+        <div class="menu-button" id="topmenubutton" onclick="topmenuanim()">
+            <span class="menu-button-inner"></span>
+            <span class="menu-button-inner"></span>
+            <span class="menu-button-inner"></span>
         </div>
-        <img width='136' height="33.4" class='toplogo' src="media/logo-placeholder.png" alt="Gemilang Energie Teknologi logo">
+        <img width='136' height="33.4" class='toplogo' src="media/logo/get-logo.png" alt="Gemilang Energie Teknologi logo">
+        <nav id="topnav">
+            <ul class="first-level-topmenu">
+                <li class="topmenu"><a href="index.html">Home</a></li>
+                <li class="topmenu"><a href="profile.html">Tentang kami</a></li>
+                <li class="topmenu"><a href="product.html">Produk</a>
+                <ul class="top-submenu">
+                    <li class="top-submenu"><a href="#" class="top-submenu">Untuk Rumah</a></li>
+                    <li class="top-submenu"><a href="#" class="top-submenu">Komersial dan Industri</a></li>
+                </ul>
+                </li>
+                <li class="topmenu"><a href="maintenance.html">Maintenance</a></li>
+                <!-- <li class="topmenu"><a href="estimator.html">Estimator</a></li> -->
+                <li class="topmenu"><a href="contact.html">Hubungi Kami</a></li>
+                <!-- <li class="topmenu"><a href="#">Referral Program</a></li> -->
+            </ul>
+        </nav>
     </header>
-    <nav id="topnav">
-        <a href="#" class="topmenu">Home</a>
-        <a href="" class="topmenu">About</a>
-        <a href="" class="topmenu">Products</a>
-        <a href="" class="topmenu">Contact Us</a>
-    </nav>
+    
     <div class="container">
         <section class="top-section">
-            <div class="darken"></div>
+            <div class="lighten"></div>
             <div class="top-section-content">
-                <span class="company-name">Energi Surya Untuk Semua Orang</span>
-                <span class="tagline">[tagline] Unlimited energy is around us</span>
+                <span class="company-name">Energi Surya<br>Untuk Semua Orang</span>
+                <span class="tagline">Unlimited energy is around us</span>
                 <div class="action-buttons">
-                    <!-- <a href="#about" class="action-button">Tentang kami</a>
-                    <a href="#products" class="action-button">Produk</a> -->
-                    <a href="#" class="action-button order-button">Saya ingin memasang solar panel</a>
+                    <a href="#products" class="action-button order-button">Saya ingin memasang solar panel</a>
                 </div>
             </div>
         </section>
@@ -44,8 +54,8 @@
             <div id="about" class="jumpto"></div>
             <div class="about">Tentang Gemilang Energie Teknologi</div>
             <h2>Energi Surya Kini Semakin Dekat Dengan Anda</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex explicabo exercitationem veniam. Facilis quidem cumque quos perspiciatis iure rerum modi autem. Fuga doloremque sit culpa ducimus totam possimus soluta repellat?</p>
-            <a href="#" class="action-link">Profil lengkap &rarr;</a>
+            <p>Gemilang Energie Teknologi membawa Anda menuju pemanfaatan energi surya paling optimal.</p>
+            <a href="profile.html" class="action-link">Profil lengkap &rarr;</a>
         </section>
         <section class="type-1 clean-energy">
             <div class="lighten"></div>
@@ -54,20 +64,52 @@
                     <h2>Potensi Besar Energi Surya Indonesia</h2>
                     <p>Energi melimpah dari matahari. Bersih dan NOL emisi, dengan paparan tinggi di Indonesia.</p>
                 </div>
-                <!-- <img class="type-1-2-img" src="" alt="solarpanel"> -->
             </div>
         </section>
-        <section class="type-2">
+        <section class="support">
+            <h2>Dukungan Pemerintah</h2>
+            <p>Penggunaan energi surya di Indonesia didukung pemerintah dengan beberapa kebijakan.</p>
+            <div class="policies">
+                <div class="policy">
+                    <div class="region">DKI Jakarta</div>
+                    <span class="policy-name"><a href="https://jdih.jakarta.go.id/dokumen/detail/5893/peraturan-gubernur-nomor-60-tahun-2022-tentang-bangunan-gedung-hijau" rel="nofollow noopener no referrer">Pergub DKI Jakarta No. 60 Tahun 2022</a></span>
+                </div>
+                <div class="policy">
+                    <div class="region">Bali</div>
+                    <span class="policy-name"><a href="https://jdih.baliprov.go.id/produk-hukum/peraturan-perundang-undangan/pergub/24818" rel="nofollow noopener noreferrer">Pergub Bali No. 45 Tahun 2019</a></span>
+                </div>
+                <div class="policy">
+                    <div class="region">NTB</div>
+                    <span class="policy-name"><a href="https://jdih.ntbprov.go.id/content/perda-nomor-3-tahun-2019" rel="nofollow noopener noreferrer">Perda NTB No. 03 Tahun 2019</a></span>
+                </div>
+            </div>
+        </section>
+        <section class="video-outer">
+            <div class="video">
+                <h2>Sistem Solar Panel On-Grid</h2>
+                <p>Tetap terhubung dengan jaringan listrik PLN, tidak menggunakan baterai. <a href="on-grid.html">Pelajari selengkapnya &rarr;</a></p>
+                <a href="media/On Grid.gif" class="home-video-link">
+                    <img class="home-video" src="media/On Grid.gif" alt="">
+                </a>
+                
+                <!-- <video class="home-video" controls>
+                    <source src="media/process.mp4" type="video/mp4">
+                </video> -->
+            </div>
+        </section>
+        <section class="type-2 energy-saving">
             <div id="energy-saving" class="type-2-section-img" alt="solarpanel"></div>
             <div class="type-2-second">
                 <h2>Tekan Biaya Listrik</h2>
-                <p>Hemat biaya listrik dengan <i>solar panel</i> hingga ... %.</p>
+                <p>Hemat biaya listrik dengan <i>solar panel</i> sesuai kapasitas solar panel Anda.</p>
+                <div class="action-button-outer">
+                    <a class="action-button">Estimator biaya</a>
+                </div>
             </div>
         </section>
-        <section class="type-1 house-solar">
-            <div class="lighten"></div>
-            <div class="type-1-contents">
-                <div class="type-1-first">
+        <section class="type-4 residential">
+            <div class="type-4-contents">
+                <div class="type-4-first">
                     <h2>Menjangkau rumah tangga</h2>
                     <p>Pemasangan solar panel di rumah lengkap, tanpa ribet.</p>
                 </div>
@@ -75,10 +117,45 @@
                     <a class="action-button">Pelajari selengkapnya</a>
                 </div>
             </div>
-            
+            <div class="type-4-img house-solar"></div>
+        </section>
+        <section class="type-5 why-us">
+            <div class="type-5-content">
+                <h2>Mengapa Harus Gemilang Energie Teknologi</h2>
+                <div class="type-5-list"><i class="fa-solid fa-circle-check"></i> Kualitas Solar Panel terbaik</div>
+                <div class="type-5-list"><i class="fa-solid fa-circle-check"></i> Customer Service 24/7/365</div>
+                <div class="type-5-list"><i class="fa-solid fa-circle-check"></i> Maintenance rutin</div>
+                <div class="type-5-list"><i class="fa-solid fa-circle-check"></i> Harga terbaik</div>
+            </div>
+        </section>
+        <section class="partners">
+            <h2>Klien kami</h2>
+            <div class="home-gallery">
+                <a class="gallery-image" href="media/clients/hyundai.gif">
+                    <img src="media/clients/hyundai.gif" alt="Hyundai">
+                </a>
+                <a class="gallery-image" href="https://energie.co.id/assets/images/customer-01.jpg">
+                    <img src="https://energie.co.id/assets/images/customer-01.jpg" alt="PJB PLN">
+                </a>
+                <a class="gallery-image" href="media/clients/bmw.png">
+                    <img src="media/clients/bmw.png" alt="Navitas Indonesia">
+                </a>
+                <a class="gallery-image" href="https://energie.co.id/assets/images/customer-02.png">
+                    <img src="https://energie.co.id/assets/images/customer-02.png" alt="Navitas Indonesia">
+                </a>
+                <a class="gallery-image" href="https://energie.co.id/assets/images/customer-03.png">
+                    <img src="https://energie.co.id/assets/images/customer-03.png" alt="pertamina">
+                </a>
+                <a class="gallery-image" href="https://energie.co.id/assets/images/customer-04.jpg">
+                    <img src="https://energie.co.id/assets/images/customer-04.jpg" alt="mitra">
+                </a>
+                <a class="gallery-image" href="https://energie.co.id/assets/images/customer-energie-paramount.jpg">
+                    <img src="https://energie.co.id/assets/images/customer-energie-paramount.jpg" alt="Paramount Land">
+                </a>
+            </div>
         </section>
         <section class="type-3 wq">
-            <h2>Mengapa Solar Panel?</h2>
+            <h2>Solar panel? Keunggulannya apa sih?</h2>
             <div class="boxes">
                 <div class="box-1">
                     <div class="icon-cover-1">
@@ -112,33 +189,20 @@
             <div id="products" class="jumpto"></div>
             <div class="catalog-outer">
                 <h2>Paket</h2>
-                <p>Paket pemasangan solar panel sesuai dengan kebutuhan Anda.</p>
-                <div class="catalog">
-                    <div class="product-list">
-                        <a class="single-product" href="#">
-                            <div style="background-image:url(https://placehold.co/160x200/green/white/?text=Gambar%20produk)" alt="" class="product-img"></div>
-                            <p class="product-name">1 kWp on-grid</p>
-                        </a>
-                        <a class="single-product" href="#">
-                            <div style="background-image:url(https://placehold.co/160x200/green/white/?text=Gambar%20produk)" alt="" class="product-img"></div>
-                            <p class="product-name">2 kWp on-grid</p>
-                        </a>
-                        <a class="single-product" href="#">
-                            <div style="background-image:url(https://placehold.co/160x200/green/white/?text=Gambar%20produk)" alt="" class="product-img"></div>
-                            <p class="product-name">5 kWp on-grid</p>
-                        </a>
-                        <a class="single-product" href="#">
-                            <div style="background-image:url(https://placehold.co/160x200/green/white/?text=Gambar%20produk)" alt="" class="product-img"></div>
-                            <p class="product-name">10 kWp on-grid</p>
-                        </a>
-                    </div>
-                    <a href="#" class="action-link">Katalog lengkap &rarr;</a>
+                <p class="catalog-caption">Paket pemasangan solar panel sesuai dengan kebutuhan Anda.</p>
+                <div class="catalog-2">
+                    <a class="catalog-res catalog-home" href="residential.html">
+                        <span class="catalog-content">Solar Panel Untuk Perumahan</span>
+                    </a>
+                    <a class="catalog-commerce catalog-home" href="commercial.html">
+                        <span class="catalog-content">Untuk Komersial dan Industri</span>
+                    </a>
+                    <a class="charging-station catalog-home" href="charging.html">
+                        <span class="catalog-content">Charging station untuk mobil</span>
+                    </a>
                 </div>
             </div> 
         </section>
-
-        
-
         <section class="insight">
             <div id="insight" class="jumpto"></div>
             <div class="insight-title">
@@ -147,78 +211,138 @@
             </div>
             <div class="insight-post-list-outer">
                 <div class="insight-post-list">
-                    <div class="insight-post">
-                        <img src="https://placehold.co/384x216" alt="" class="featured-image">
-                        <span class="insight-post-title">Judul</span>
-                        <p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illum neque voluptate qui dolorem tenetur...</p>
-                    </div>
-                    <div class="insight-post">
-                        <img src="https://placehold.co/384x216" alt="" class="featured-image">
-                        <span class="insight-post-title">Judul</span>
-                        <p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illum neque voluptate qui dolorem tenetur...</p>
-                    </div>
-                    <div class="insight-post">
-                        <img src="https://placehold.co/384x216" alt="" class="featured-image">
-                        <span class="insight-post-title">Judul</span>
-                        <p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illum neque voluptate qui dolorem tenetur...</p>
-                    </div>
-                    <div class="insight-post">
-                        <img src="https://placehold.co/384x216" alt="" class="featured-image">
-                        <span class="insight-post-title">Judul</span>
-                        <p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illum neque voluptate qui dolorem tenetur...</p>
-                    </div>
-                    <div class="insight-post">
-                        <img src="https://placehold.co/384x216" alt="" class="featured-image">
-                        <span class="insight-post-title">Judul</span>
-                        <p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illum neque voluptate qui dolorem tenetur...</p>
-                    </div>
-                    <div class="insight-post">
-                        <img src="https://placehold.co/384x216" alt="" class="featured-image">
-                        <span class="insight-post-title">Judul</span>
-                        <p class="excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illum neque voluptate qui dolorem tenetur...</p>
-                    </div>
+                    <a class="insight-post" href="articles.html">
+                        <img src="media/solar-house-rawpixel.jpg" alt="" class="featured-image">
+                        <div class="insight-post-properties">
+                            <span class="insight-post-title">Solar Panel: Generasikan Energi di Rumah Sendiri</span>
+                            <p class="excerpt">Energi terbarukan menjadi pilihan utama dalam pemenuhan kebutuhan listrik. Solar Panel adalah ...</p>
+                        </div>
+                    </a>
+                    <a class="insight-post" href="on-grid.html">
+                        <img src="media/On Grid.gif" alt="" class="featured-image">
+                        <div class="insight-post-properties">
+                            <span class="insight-post-title">Solar Panel On-Grid, Off-Grid, dan Hybrid: Perbedaan dan Keunggulan</span>
+                            <p class="excerpt">Solar panel adalah sebuah sistem yang berfungsi untuk mengubah energi cahaya matahari menjadi ....</p>
+                        </div>
+                    </a>
+                    <a class="insight-post">
+                        <img src="media/sun.jpg" alt="" class="featured-image">
+                        <div class="insight-post-properties">
+                            <span class="insight-post-title">Inilah Caranya! Cahaya Matahari Menjadi Listrik Untuk Rumah Anda</span>
+                            <p class="excerpt">Bagaimana energi matahari yang melimpah dapat berubah menjadi listrik?</p>
+                        </div>
+                    </a>
+                    <a class="insight-post">
+                        <img src="media/solar-panel-future.jpg" alt="" class="featured-image">
+                        <div class="insight-post-properties">
+                            <span class="insight-post-title">Energi Surya, Masa Depan Umat Manusia</span>
+                            <p class="excerpt">Masa depan bersih dan cerah menggunakan solar panel.</p>
+                        </div>
+                    </a>
+                    <a class="insight-post">
+                        <img src="media/solar-repair.jpg" alt="" class="featured-image">
+                        <div class="insight-post-properties">
+                            <span class="insight-post-title">8 Hal yang Sebaiknya Anda Ketahui Sebelum Memasang Solar Panel</span>
+                            <p class="excerpt">Ketahui hal-hal ini untuk mempermudah proses pemasangan solar panel.</p>
+                        </div>
+                    </a>
+                    <a class="insight-post">
+                        <img src="media/solar-cleaning.jpg" alt="" class="featured-image">
+                        <div class="insight-post-properties">
+                            <span class="insight-post-title">5 Langkah Mudah Membersihkan Solar Panel Sendiri</span>
+                            <p class="excerpt">Membersihkan solar panel ternyata bisa dilakukan secara mandiri oleh pengguna solar panel sendiri.</p>
+                        </div>
+                        
+                    </a>
                 </div>
-                <a class="action-link" href="">Lebih banyak pengetahuan &rarr;</a>
+                <a class="action-link" href="archives.html">Lebih banyak pengetahuan &rarr;</a>
             </div>
-            
         </section>
         <section class="gallery">
             <div id="gallery" class="jumpto"></div>
             <h2>Galeri</h2>
-            <div class="home-gallery">
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-                <a class="gallery-image" href="">
-                    <img src="https://placehold.co/200x200" alt="solar panel">
-                </a>
-            </div>
+            <div class="slideshow-container">
+                <div class="slides fade">
+                    <div class="numbertext">1 / 7</div>
+                    <img src="media/projects/project-1.jpg">
+                        <div class="text">Kawasan komersial</div>
+                    </div>
+                    
+                    <div class="slides fade">
+                        <div class="numbertext">2 / 7</div>
+                        <img src="media/projects/summarecon-serpong.jpg">
+                        <div class="text">Summarecon Mal Serpong</div>
+                    </div>
+                    
+                <!-- ==== -->
+                <div class="slides fade">
+                <div class="numbertext">3 / 7</div>
+                <img src="media/projects/mansion.png">
+                <div class="text">Residensial</div>
+                </div>
+                
+                <div class="slides fade">
+                <div class="numbertext">4 / 7</div>
+                <img src="media/projects/residential.png">
+                <div class="text">Residensial</div>
+                </div>
+                
+                <div class="slides fade">
+                <div class="numbertext">5 / 7</div>
+                <img src="media/projects/sdc.png">
+                <div class="text">Summarecon Digital Center, Serpong</div></div>
+                
+
+                <div class="slides fade">
+                    <div class="numbertext">6 / 7</div>
+                    <img src="media/projects/pakubuwono-evcms.png">
+                    <div class="text">Pakubuwono EVCMS</div>
+                </div>
+                <div class="slides fade">
+                    <div class="numbertext">7 / 7</div>
+                    <img src="media/projects/lloyd.png">
+                    <div class="text">Lloyd EVCMS</div></div>
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span>
+                  <span class="dot"></span> 
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span> 
+                </div>
+                
+                <script>
+                let slideIndex = 0;
+                showSlides();
+                
+                function showSlides() {
+                  let i;
+                  let slides = document.getElementsByClassName("slides");
+                  let dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1}    
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                  setTimeout(showSlides, 5000);
+                }
+                </script>
         </section>
     </div>
     <footer>
         <div class="footer-logo">
-            <img src="../media/logo.png" alt="bottom-logo" class="bottom-logo">
+            <img src="media/logo/get-logo-withwhites.png" alt="bottom-logo" class="bottom-logo">
         </div>
         <div class="footer-section">
-            
             <span class="footer-company-name">PT. Gemilang Energie Teknologi</span>
             <div class="footer-row company-detail">
                 <i class="fa-solid fa-location-dot"></i><span class="company-address"> Sahid Sudirman Center Lt. 53B,<br>Jl. Jend. Sudirman No. 86,<br>Jakarta 10220</span>
@@ -227,48 +351,40 @@
                 <i class="fa-solid fa-phone"></i>&#160;&#160;<a href="tel:+62212528669">(021) 252 8669</a>
             </div>
             <div class="footer-row">
-                <i class="fa-solid fa-envelope"></i>&#160;&#160;<a href="mailto:gemilanginvestapratama@gmail.com">gemilanginvestapratama@gmail.com</a>
+                <i class="fa-brands fa-whatsapp"></i>&#160;&#160;<a href="https://wa.me/6287808780879">0878 0878 0879</a>
+            </div>
+            <div class="footer-row">
+                <i class="fa-solid fa-envelope"></i>&#160;&#160;<a href="mailto:gemilangenergieteknologi.get@gmail.com">gemilangenergieteknologi.get<wbr>@gmail.com</a>
             </div>
         </div>
         <div class="footer-section">
             <div class="bottom-nav">
                 <span class="bottom-menu-hdg">Navigasi</span>
-                <a href="#" class="bottom-menu">Tentang kami</a>
-                <a href="#" class="bottom-menu">Pemesanan</a>
-                <a href="#" class="bottom-menu">Kontak</a>
-                <a href="#" class="bottom-menu">Kebijakan privasi</a>
-                <a href="#" class="bottom-menu">Syarat dan ketentuan penggunaan</a>
+                <a href="profile.html" class="bottom-menu">Tentang kami</a>
+                <a href="product.html" class="bottom-menu">Produk</a>
+                <a href="contact.html" class="bottom-menu">Kontak</a>
+                <a href="privacy-policy.html" class="bottom-menu">Kebijakan privasi</a>
+                <a href="terms-of-use.html" class="bottom-menu">Syarat dan ketentuan</a>
             </div>
         </div>
         <div class="footer-section">
             <div class="bottom-nav">
                 <span class="bottom-menu-hdg">Media</span>
                 <div class="social-list">
-                    <a href="#" class="bottom-menu fa-brands fa-facebook" title="Facebook"></a>
-                    <a href="#" class="bottom-menu fa-brands fa-instagram" title="Instagram"></a>
-                    <a href="#" class="bottom-menu fa-brands fa-youtube" title="YouTube"></a>
-                    <a href="#" class="bottom-menu fa-brands fa-linkedin" title="LinkedIn"></a>
+                    <a href="https://www.facebook.com/GemilangEnergieTeknologi" class="fa-brands fa-facebook" title="Facebook"></a>
+                    <a href="https://www.instagram.com/gemilangenergieteknologi" class="fa-brands fa-instagram" title="Instagram"></a>
+                    <a href="https://www.youtube.com/channel/GemilangEnergieTeknologi" class="fa-brands fa-youtube" title="YouTube"></a>
+                    <a href="https://www.tiktok.com/@gemilangenergieteknologi" class="fa-brands fa-tiktok" title="TikTok"></a>
                 </div>
             </div>
+            <div class="copyright">
+                <p>Copyright &copy; <span id="copyyear"></span> — PT. Gemilang Energie Teknologi</p>
+            </div>
+            <script>
+                let currentDate=new Date();
+                document.getElementById('copyyear').textContent=currentDate.getFullYear();
+            </script>
         </div>
     </footer>
-    <script>
-        function revealSection() {
-            const sections = document.querySelectorAll('section');
-
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-
-                if (sectionTop < window.innerHeight-300) {
-                    section.style.opacity = 1;
-                }
-            });
-        }
-        window.addEventListener('scroll', revealSection);
-        window.addEventListener('resize', revealSection);
-
-        // Call revealSection on page load to handle initial state
-        window.addEventListener('load', revealSection);
-    </script>
 </body>
 </html>

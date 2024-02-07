@@ -1,14 +1,14 @@
 section{opacity:0;transition: opacity 1s ease;}
 .top-section{
-    --top-section-color:var(--c2);
+    --top-section-color: var(--c1);
     /* background: linear-gradient(180deg, rgba(191,219,129,1) 70%, rgba(2,0,36,0) 100%); */
-    background-image:url('../media/solar.jpg');
-    background-position: 50%;
+    background-image: url(https://energie.co.id/assets/images/home-02.jpg);
+    background-position: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 80vh;
-    position:relative;
-    z-index:1;
+    background-size: 69%;
+    height: 550px;
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
 }
@@ -16,16 +16,85 @@ section{opacity:0;transition: opacity 1s ease;}
 .top-section-content {
     display: flex;
     flex-direction: column;
-    margin-left: 18vw;
+    margin-left: 4vw;
+}
+.top-section .lighten{
+    height: 100%;
+    background-color: var(--c5);
+}
+.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    box-sizing: border-box;
+    width: 70vw;
+    position: relative;
+    margin: 4em auto;
+    border-radius: 10px;
+    background-color: paleturquoise;
+}
+.video h2{
+    margin-bottom:0.8em;
+}
+.home-video{
+    width:50vw;
+    margin-top: 1em;
+    border-radius:10px;
+}
+section.support {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    align-items: center;
+}
+.region {
+    border-radius:10px;
+    width: 100px;
+    height: 100px;
+    background: var(--c4);
+    color: var(--c3);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16pt;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+.policy {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+span.policy-name {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.support {
+    padding: 3em 0;
+}
+
+.policies {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.support p {
+    margin-bottom: 3em;
 }
 .company-name,.tagline,.top-section .action-buttons{position: relative;z-index: 3;color:var(--top-section-color)}
-.company-name{
+.company-name {
     font-weight: bold;
-    font-size: 40pt;
+    font-size: calc(30pt + 1vw);
     margin-bottom: 0.2rem;
 }
 .tagline{font-size:17pt;font-style:italic;}
-.company-name,.tagline{text-shadow:2px 2px 6px #000;}
+/* .company-name,.tagline{text-shadow:2px 2px 6px #000;} */
 .top-section .action-buttons {
     margin-top: 3em;
 }
@@ -41,19 +110,19 @@ section{opacity:0;transition: opacity 1s ease;}
     transition: 0.1s ease-in-out;
 }
 .top-section a.action-button:hover{
-    background:var(--c5);
+    background:var(--c3);
     /* color:var(--top-section-color); */
 }
 .about{font-size:11pt;font-weight:bold;text-transform: uppercase;color:var(--c1)}
-.darken,.lighten{width:100%;position:absolute;opacity:0.5;z-index:2}
-.lighten{background:var(--c2);}
+.darken,.lighten{width:100%;position:absolute;z-index:2}
+/* .lighten{background:var(--c2);} */
 .darken{background:var(--c4)}
-.top-section .darken{height: 80vh;}
-.order-button{font-weight: bold;background-color:var(--c3);color:var(--c1);font-size:13pt}
+.top-section .darken{height: 500px;}
+.order-button{font-weight: bold;background-color:var(--c1);color:var(--c2);font-size:13pt}
 .order-button:hover{background-color:var(--c5);color:var(--c1)}
 /* === COMPANY OUTLINE ===*/
 .company-outline {
-    height: 60vh;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,13 +133,13 @@ h2{font-size:27pt;margin-top:0;}
 section.type-1 {
     display: flex;
     align-items: center;
-    height: 80vh;
+    height: 500px;
 }
 section.type-2 {
     display: flex;
     align-items: center;
     gap:5em;
-    height: 70vh;
+    height: 450px;
     background-color:#fffafa;
 }
 .type-1 h2{font-size:30pt;}
@@ -80,19 +149,18 @@ section.type-2 {
     flex-direction: column;
     justify-content: center;
     margin-left: 15vw;
-    color:var(--c3);
+    color:#011d42;
     position: relative;
     z-index: 3;
 }
 .clean-energy{
     background: url('../media/sun.jpg');
-    background-position: 60% 40%;
+    background-position: 60% 32%;
     background-repeat: no-repeat;
     background-size: cover;
-    text-shadow:2px 2px 5px #000;
 }
 .clean-energy .lighten{
-    height:80vh;
+    height:500px;
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);
 }
 .type-2-section-img{    width: 30%;
@@ -103,16 +171,18 @@ section.type-2 {
     background-repeat: no-repeat;
     background-size: cover;}
 #energy-saving{
-    background-image:url('../media/meter.jpg');
+    background-image:url('https://storage.googleapis.com/flip-prod-mktg-strapi/media-library/jenis_dan_fungsi_meteran_listrik_a23494b438/jenis_dan_fungsi_meteran_listrik_a23494b438.jpeg');
 }
 .catalog-outer {
     width: 70vw;
+    margin: auto;
 }
 .company-products {
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    align-items: center;
+    padding:4em 0;
+    box-sizing: border-box;
+}
+.catalog-caption{
+    margin-bottom:2em;
 }
 .product-list {
     display: flex;
@@ -123,7 +193,7 @@ section.type-2 {
 
 a.single-product {
     height: 300px;
-    width: 200px;
+    width: 350px;
     /* border: 2px solid var(--c1); */
     border-radius: 15px;
     /* padding: 15px;
@@ -141,18 +211,19 @@ a.single-product:hover{box-shadow:0px 0px 10px var(--c4)}
     border-radius:13px 13px 0 0;
     /* clip-path:polygon(0px 0px, 100% 0px, 100% 100%, 0px 80%) */
 }
-.house-solar{background:var(--c4)}
-.house-solar .action-button {
+.residential .action-button {
     border: 1px solid;
     padding: 0.5em 1em;
     border-radius: 13px;
     transition:0.2s ease-in-out;
+    color: var(--c3);
 }
-.house-solar .action-button:hover{
-    background:#555;
+.residential .action-button:hover{
+    background:var(--c5);color:var(--c1)
 }
+.energy-saving .action-button{padding:0.5em 1em;border:1px solid;border-radius:15px;}
 .type-3 {
-    height: 60vh;
+    height: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -169,14 +240,15 @@ a.single-product:hover{box-shadow:0px 0px 10px var(--c4)}
 
 .box-1 {
     height: 300px;
-    width: 200px;
-    border: 1px solid;
+    width: 220px;
+    box-shadow: 0 0 9px #aaa;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     row-gap: 2em;
     align-items: center;
+    background: white;
 }
 span.box-caption {
     font-weight: bold;
@@ -193,7 +265,7 @@ span.box-caption {
 }
 .wq{color:var(--c1)}
 .insight-post-list-outer {
-    width: 70vw;
+    width: 70%;
     margin: auto;
     padding: 3em 0;
 }
@@ -204,7 +276,9 @@ span.box-caption {
     margin-bottom: 2em;
 }
 .insight-post {
-    width: 30%;
+    color:var(--c4);
+    background: var(--c3);
+    width: 31%;
     box-shadow: 0px 0px 4px;
     border-radius: 15px;
 }
@@ -213,26 +287,27 @@ span.box-caption {
 }
 img.featured-image {
     width: 100%;
+    height: 56%;
     border-radius: 15px 15px 0 0;
     margin-bottom: 0.5rem;
 }
-
+.insight-post-properties{
+    margin:0 1em;
+}
 .insight-post-title {
     font-weight: bold;
     color: var(--c1);
+    font-size:13pt;
 }
 
 p.excerpt {
     font-size: 10pt;
 }
 
-.insight-post-title,p.excerpt {
-    margin-left: 1em;
-}
 .insight-title{
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(26,71,24,1) 40%);
     color: var(--c2);
-    height: 50vh;
+    height: 400px;
     display: flex;
     flex-direction: column;
     padding-left: 15vw;
@@ -242,6 +317,14 @@ p.excerpt {
 section.gallery {
     padding: 2em 0;
     box-sizing: border-box;
+    height: 750px;
+}
+section.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3em;
+    box-sizing: border-box;
 }
 .home-gallery {
     display: flex;
@@ -249,9 +332,355 @@ section.gallery {
     width: 70vw;
     flex-wrap: wrap;
     margin-left: 15vw;
+    justify-content: center;
+    align-items: center;
 }
-
+.partners .home-gallery {
+    width: 60vw;
+    margin-left: 0;
+    background-color: var(--c2);
+    padding: 2em;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
 .gallery h2 {
     margin-left: 15vw;
 }
 .gallery-image img{width: 240px;height:auto;}
+a.action-link{
+    display: block;
+    background: var(--c1);
+    color: var(--c6);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.type-2 h2,.type-4 h2{margin-bottom:0.7em;}
+.residential{
+    background-color:var(--c1);
+    color:var(--c3)
+}
+.type-4 {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    align-items: center;
+    gap: 5em;
+}
+.type-5 {
+    display: flex;
+    height: 500px;
+    align-items: center;
+    gap: 5em;
+}
+.type-5-content {
+    width: 50vw;
+    margin: auto;
+    background-color: var(--c8);
+    color: var(--c2);
+    padding: 2em 3em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px 3px #555;
+}
+.type-5-list {
+    line-height: 3;
+}
+.fa-circle-check{font-size:12pt;}
+.type-4-contents {
+    margin-left: 15vw;
+}
+
+.type-4-img {
+    width: 30%;
+    height: 70%;
+    border-radius: 15px;
+}
+.house-solar{
+    background-image:url('../media/solar-house.png');
+    background-size:cover;
+    background-position:30% 50%;
+}
+.type-2 .action-button-outer,.type-4 .action-button-outer{margin-top:2em;}
+.product-properties{
+    width:90%;margin:1px auto;
+}
+.product-name{
+    color:var(--c1);
+    font-weight: bold;
+}
+
+
+/* 2 */
+.catalog-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    flex-wrap: wrap;
+}
+.catalog-home{
+    width:500px;
+    height:400px;
+    /* background-size:cover; */
+    background-size:143%;
+    background-repeat: no-repeat;
+    background-position:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:10px;
+    transition:all 0.3s ease-in-out;
+}
+.catalog-content{
+    background-color: white;
+    color:var(--c1);
+    padding:0.5em 1em;
+    box-sizing: border-box;
+    border-radius: 11px;
+    font-size:20pt;
+    font-weight:bold;
+    
+}
+/* .catalog-home .darken,.catalog-home .lighten{width:500px;height:50vh;} */
+.catalog-res{
+    background-image: url('../media/solar-house-roof.jpg');
+}
+.catalog-commerce{background-image:url('https://images.unsplash.com/photo-1658298775754-5839ffd434cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')}
+.charging-station{background-image:url('../media/solar-charging-station.jpg')}
+.catalog-home:hover{background-size:160%;}
+.slides {display: none;}
+.slideshow-container img {vertical-align: middle;height: auto;width:50vw;}
+
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    max-width: 60%;
+    text-align: center;
+    left: 30%;
+    right: 30%;
+    background-color: var(--c4);
+    border-radius: 10px;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+@media(min-width:801px){
+    .top-section .lighten{
+        width: calc(40% + 4vw);
+        clip-path: polygon(0 0, 100% 0,80% 100%, 0 100%);
+    }
+}
+@media(max-width:1500px){
+    .top-section .lighten{
+        width: 52%
+    }
+    .insight-post{
+        width: calc(31% + 8vw);
+    }
+}
+@media(max-width:1200px){
+    .top-section .lighten{
+        width: 65%
+    }
+}
+@media(max-width:800px){
+    .container{
+        margin-top: 70px 
+    }
+    section.top-section,.top-section .lighten {
+        /* height: 70vh; */
+    }
+    .top-section-content{
+        margin-left:0;
+        padding: 0 1em;
+        box-sizing: border-box;
+    }
+    .top-section .lighten{
+        width: 100%;
+    }
+    .company-name{
+        font-size: calc(28pt + 1vh);
+    }
+    .tagline{font-size:15pt;}
+    .top-section a.action-button{
+        font-size: calc(12pt - 0.5vw);
+        padding: calc(0.7rem - 0.5vw);
+    }
+    h2{
+        font-size:19pt;
+    }
+    .about{
+        font-size:9pt;
+    }
+    .company-outline{
+        margin:0;
+        padding: 0 5vw;
+        box-sizing: border-box;
+        font-size: 14pt;
+    }
+    a.action-link{
+        font-size:12pt;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    .support{
+        padding: 3em 1em;
+        font-size:12pt;
+    }
+    .policy{
+        flex-direction: column;
+        margin-bottom:1em;
+        gap:1em;
+    }
+    .policy-name{text-align:center;}
+    .boxes{
+        flex-direction: column;
+    }
+    .box-1{
+        height: 247px;
+    }
+    .insight-post-list{
+        flex-direction: column;
+    }
+
+    .insight-post {
+        width: 100%;
+        height: max-content;
+        padding-bottom: 20px;
+    }
+    .type-1-contents{
+        padding:0 1em;
+        box-sizing: border-box;
+        margin:auto;
+    }
+    .video{
+        width: 100%;
+        border-radius:0;
+        margin:0;
+    }
+    .home-video{
+        width:100%;
+    }
+    section.type-2,section.type-4{
+        gap: 2em;
+        height: max-content;
+        flex-direction: column;
+        font-size:11pt;
+        /* height:70vh; */
+        padding:4em 2em;
+        box-sizing:border-box;
+    }
+    .type-2-section-img,.type-4-img {
+        width:100%;
+        height:200px;
+        margin-left: 0;
+        border-radius: 15px;
+        background-position: 53% 40%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .type-4-contents {
+        margin-left: 0;
+    }
+    .type-5-content {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 3em 2em;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .type-5-list {
+        line-height: 3;
+    }
+    section.type-3.wq {
+        height: max-content;
+        display: flex;
+        align-items: center;
+    }
+    .wq h2 {
+        font-size: 18pt;
+        width: 80%;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .company-products {padding: 0;margin: 2em 0;}
+    .catalog-outer {
+        width: 100%;
+    }
+    .catalog-outer h2, .catalog-caption {
+        text-align: center;
+    }
+    .catalog-2{
+        gap:2px;
+    }
+    .catalog-content{
+        padding: 0.3em 0.5em;
+        border-radius: 11px 11px 0 0;
+        font-size: 17pt;
+        position: relative;
+        bottom: -40%;
+        
+    }
+    .catalog-home{
+        background-size: 171%;
+        border-radius:0;
+        margin-bottom: 1em;
+    }
+    .catalog-home:hover {
+        background-size: 210%;
+    }
+    .insight-title{
+        padding: 2em;
+    }
+    .insight-post-list-outer {
+        width: 80%;
+    }
+    .slideshow-container img {
+        height: auto;
+    }
+}

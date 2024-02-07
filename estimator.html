@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimator | Gemilang Energi Teknologi</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/estimator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/08c081035d.js" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+</head>
+<body class='normaltheme'>
+    <header>
+        <div class="menu-button" id="topmenubutton" onclick="topmenuanim()">
+            <span class="menu-button-inner"></span>
+            <span class="menu-button-inner"></span>
+            <span class="menu-button-inner"></span>
+        </div>
+        <img width='136' height="33.4" class='toplogo' src="media/logo/get-logo.png" alt="Gemilang Energie Teknologi logo">
+        <nav id="topnav">
+            <ul class="first-level-topmenu">
+                <li class="topmenu"><a href="index.html">Home</a></li>
+                <li class="topmenu"><a href="profile.html">Tentang kami</a></li>
+                <li class="topmenu"><a href="product.html">Produk</a>
+                <ul class="top-submenu">
+                    <li class="top-submenu"><a href="#" class="top-submenu">Untuk Rumah</a></li>
+                    <li class="top-submenu"><a href="#" class="top-submenu">Komersial dan Industri</a></li>
+                </ul>
+                </li>
+                <li class="topmenu"><a href="maintenance.html">Maintenance</a></li>
+                <!-- <li class="topmenu"><a href="estimator.html">Estimator</a></li> -->
+                <li class="topmenu"><a href="contact.html">Hubungi Kami</a></li>
+                <!-- <li class="topmenu"><a href="#">Referral Program</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="top-section">
+            <div class="lighten"></div>
+            <div class="top-section-content">
+                <h1 class="post-title">Estimator</h1>
+                <div class="post-prop-line2">
+                    Perkirakan kebutuhan solar panel Anda.
+                </div>
+            </div>
+        </section>
+        <script>
+            const tarifListrikPerKWH={
+                "1300":1444.7,
+                "2200":1444.7,
+                "3500":1699.53,
+                "4400":1699.53
+            }
+            function estimator(){
+                const luasPanelSatuan=0.5;
+                const dayaPerPanel=0.5; //Belum Fix, dalam kWp
+                let daya=parseInt(document.getElementById('daya').value);
+                let tagihan=document.getElementById('tagihan').value;
+                let panjangAtap=document.getElementById('p-atap').value;
+                let lebarAtap=document.getElementById('l-atap').value;
+                let kWh=(tagihan/tarifListrikPerKWH[daya]).toFixed(1);
+                console.log(kWh)
+                let kapasitasPanelMinimum=Math.floor(daya/1000);// dalam kVa
+                console.log(`Kapasitas min = ${kapasitasPanelMinimum}`)
+                // let kapasitasPanelMinimum=daya.toFixed(-2);
+                let luasAtap=panjangAtap*lebarAtap;
+                let i=1;
+                let jumlahPanel;
+                while(luasAtap>=i*luasPanelSatuan){
+                    i++;
+                }
+                jumlahPanel=i;
+                let kapasitasMaksimal=Math.ceil(i*dayaPerPanel);
+                console.log(`Kapasitas max = ${kapasitasMaksimal}`)
+                let kapasitasPanel=kapasitasPanelMinimum;
+                let kapasitasPanelFinal=kapasitasPanel;
+                while(kapasitasPanel>kapasitasMaksimal){
+                    kapasitasPanel-=1;
+                    
+                    totalPanel=kapasitasPanelFinal/dayaPerPanel;
+                    console.log(`Total panel = ${totalPanel}`)
+                    kapasitasPanelFinal=kapasitasPanel;
+                    console.log(`Kapasitas final = ${kapasitasPanelFinal}`)
+                }
+                
+                let energiHarian=kapasitasPanelFinal*5;
+                document.getElementById('energiHarian').textContent=energiHarian;
+                let energiBulanan=energiHarian*30;
+                document.getElementById('energiBulanan').textContent=energiBulanan;
+                let penghematanBulanan=energiBulanan*tarifListrikPerKWH[daya];
+                console.log(`Penghematan Bulanan = ${penghematanBulanan}`)
+                PenghematanSetahun=penghematanBulanan*12;
+                document.getElementById('kWp').textContent=kapasitasPanelFinal;
+                document.getElementById('hematBulanan').textContent=penghematanBulanan.toLocaleString('id-ID');
+                document.getElementById('hematTahunan').textContent=(penghematanBulanan*12).toLocaleString('id-ID');
+                let result=document.getElementsByClassName('result')[0];
+                if(!result.classList.contains('shown')){
+                    result.classList.add('shown');
+                }
+            }
+        </script>
+        <section class="estimator-outer">
+            <div class="estimator">
+                <p>Estimator kebutuhan solar panel Anda. Mohon isi sesuai dengan rumah Anda.</p>
+                <form action="">
+                <div class="form-line">
+                    <label for="daya">Kapasitas Daya Listrik Terpasang</label>
+                    <select name="daya" id="daya">
+                        <option value="1300">1.300 VA</option>
+                        <option value="2200">2.200 VA</option>
+                        <option value="3500">3.500 VA</option>
+                        <option value="4400">4.400 VA</option>
+                    </select>
+                </div>
+                <div class="form-line">
+                    <label for="tagihan">Tagihan listrik per bulan (dalam Rupiah)</label>
+                    <input type="number" name="tagihan" id="tagihan">
+                </div>
+                <div class="form-line">
+                    <label for="p-atap">Panjang atap (meter)</label>
+                    <input type="number" name="p-atap" id="p-atap">
+                </div>
+                <div class="form-line">
+                    <label for="l-atap">Lebar atap (meter)</label>
+                    <input type="number" name="l-atap" id="l-atap">
+                </div>
+                
+            </form>
+            <button class="estimator-submit" onclick="estimator()">Masukkan</button></div>
+            
+        </section>
+        <section class="result">
+            <div class="result-inner">
+                <h2>Rekomendasi</h2>
+            <div class="result-box-1">
+                <span class="kwp"><span id="kWp"></span> kWp</span>
+                <div class="result-bottom">Kapasitas Solar Panel</div>
+            </div>
+            <div class="result-box-2">
+                <div class="result-top">Energi dihasilkan</div>
+                <div class="result-dd">
+                    <div class="result-left">
+                        <div class="result-content">
+                            <span id="energiHarian"></span> kWh
+                        </div>
+                        <div class="result-bottom">per hari</div>
+                    </div>
+                    <div class="result-right">
+                        <div class="result-content">
+                            <span id="energiBulanan"></span> kWh
+                        </div>
+                        <div class="result-bottom">per bulan</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="result-box-2">
+                <div class="result-top">Anda hemat</div>
+                <div class="result-dd">
+                    <div class="result-left">
+                        <div class="result-content">
+                            Rp <span id="hematBulanan"></span>
+                        </div>
+                        <div class="result-bottom">per bulan</div>
+                    </div>
+                    <div class="result-right">
+                        <div class="result-content">
+                            Rp <span id="hematTahunan"></span>
+                        </div>
+                        <div class="result-bottom">per tahun</div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+            
+        </section>
+    </div>
+    <footer>
+        <div class="footer-logo">
+            <img src="media/logo/get-logo-withwhites.png" alt="bottom-logo" class="bottom-logo">
+        </div>
+        <div class="footer-section">
+            <span class="footer-company-name">PT. Gemilang Energie Teknologi</span>
+            <div class="footer-row company-detail">
+                <i class="fa-solid fa-location-dot"></i><span class="company-address"> Sahid Sudirman Center Lt. 53B,<br>Jl. Jend. Sudirman No. 86,<br>Jakarta 10220</span>
+            </div>
+            <div class="footer-row">
+                <i class="fa-solid fa-phone"></i>&#160;&#160;<a href="tel:+62212528669">(021) 252 8669</a>
+            </div>
+            <div class="footer-row">
+                <i class="fa-brands fa-whatsapp"></i>&#160;&#160;<a href="https://wa.me/6287808780879">0878 0878 0879</a>
+            </div>
+            <div class="footer-row">
+                <i class="fa-solid fa-envelope"></i>&#160;&#160;<a href="mailto:gemilangenergieteknologi.get@gmail.com">gemilangenergieteknologi.get<wbr>@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="bottom-nav">
+                <span class="bottom-menu-hdg">Navigasi</span>
+                <a href="profile.html" class="bottom-menu">Tentang kami</a>
+                <a href="product.html" class="bottom-menu">Produk</a>
+                <a href="contact.html" class="bottom-menu">Kontak</a>
+                <a href="privacy-policy.html" class="bottom-menu">Kebijakan privasi</a>
+                <a href="terms-of-use.html" class="bottom-menu">Syarat dan ketentuan</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="bottom-nav">
+                <span class="bottom-menu-hdg">Media</span>
+                <div class="social-list">
+                    <a href="https://www.facebook.com/GemilangEnergieTeknologi" class="fa-brands fa-facebook" title="Facebook"></a>
+                    <a href="https://www.instagram.com/gemilangenergieteknologi" class="fa-brands fa-instagram" title="Instagram"></a>
+                    <a href="https://www.youtube.com/channel/GemilangEnergieTeknologi" class="fa-brands fa-youtube" title="YouTube"></a>
+                    <a href="https://www.tiktok.com/@gemilangenergieteknologi" class="fa-brands fa-tiktok" title="TikTok"></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; <span id="copyyear"></span> — PT. Gemilang Energie Teknologi</p>
+            </div>
+            <script>
+                let currentDate=new Date();
+                document.getElementById('copyyear').textContent=currentDate.getFullYear();
+            </script>
+        </div>
+    </footer>
+</body>
+</html>
